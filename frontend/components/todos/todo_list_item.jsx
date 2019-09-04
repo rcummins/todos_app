@@ -4,8 +4,16 @@ import TodoDetailViewContainer from './todo_detail_view_container';
 class TodoListItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      detail: false
+    };
 
+    this.handleToggleDetail = this.handleToggleDetail.bind(this);
     this.handleToggleStatus = this.handleToggleStatus.bind(this);
+  }
+
+  handleToggleDetail() {
+    this.setState({ detail: !this.state.detail });
   }
 
   handleToggleStatus() {
@@ -17,14 +25,14 @@ class TodoListItem extends React.Component {
     return(
       <li>
         <div>
-          <h3>{todo.title}</h3>
+          <h3 onClick={this.handleToggleDetail} >{todo.title}</h3>
 
           <button onClick={this.handleToggleStatus} >
-            {todo.done === true ? 'Undo' : 'Done' }
+            {todo.done ? 'Undo' : 'Done' }
           </button>
         </div>
 
-        <TodoDetailViewContainer todo={todo} />
+        { this.state.detail ? <TodoDetailViewContainer todo={todo} /> : null }
       </li>
     );
   }
