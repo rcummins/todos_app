@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import allTodos from '../../reducers/selectors';
+import { allTodos } from '../../reducers/selectors';
 import {
   receiveTodo,
   toggleStatus
