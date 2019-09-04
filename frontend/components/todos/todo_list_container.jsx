@@ -3,7 +3,7 @@ import allTodos from '../../reducers/selectors';
 import {
   receiveTodo,
   removeTodo,
-  updateTodo
+  toggleStatus
 } from '../../actions/todo_actions';
 import TodoList from './todo_list';
 
@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   receiveTodo: todo => dispatch(receiveTodo(todo)),
   removeTodo: id => dispatch(removeTodo(id)),
-  updateTodo: todo => dispatch(updateTodo(todo))
+  toggleStatus: id => dispatch(toggleStatus(id))
 });
 
 export default connect(

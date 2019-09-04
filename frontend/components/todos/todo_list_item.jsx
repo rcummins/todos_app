@@ -5,22 +5,15 @@ class TodoListItem extends React.Component {
     super(props);
 
     this.handleDelete = this.handleDelete.bind(this);
-    this.toggleStatus = this.toggleStatus.bind(this);
+    this.handleToggleStatus = this.handleToggleStatus.bind(this);
   }
 
   handleDelete() {
     this.props.removeTodo(this.props.todo.id);
   }
 
-  toggleStatus() {
-    let { todo } = this.props;
-    let newTodo = {
-      id: todo.id,
-      title: todo.title,
-      body: todo.body,
-      done: !todo.done
-    };
-    this.props.updateTodo(newTodo);
+  handleToggleStatus() {
+    this.props.toggleStatus(this.props.todo.id);
   }
 
   render() {
@@ -33,7 +26,7 @@ class TodoListItem extends React.Component {
           Delete
         </button>
 
-        <button onClick={this.toggleStatus} >
+        <button onClick={this.handleToggleStatus} >
           {todo.done === true ? 'Undo' : 'Done' }
         </button>
       </li>
