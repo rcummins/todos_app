@@ -2,7 +2,7 @@ import React from 'react';
 import TodoListItem from './todo_list_item';
 import TodoForm from './todo_form';
 
-const TodoList = ({ todos, receiveTodo, removeTodo, toggleStatus }) => (
+const TodoList = ({ todos, receiveTodo, toggleStatus }) => (
   <div>
     <ul>
       {
@@ -10,7 +10,6 @@ const TodoList = ({ todos, receiveTodo, removeTodo, toggleStatus }) => (
           <TodoListItem
             key={index}
             todo={todo}
-            removeTodo={removeTodo}
             toggleStatus={toggleStatus} />
         ))
       }

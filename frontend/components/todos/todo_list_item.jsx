@@ -1,15 +1,11 @@
 import React from 'react';
+import TodoDetailViewContainer from './todo_detail_view_container';
 
 class TodoListItem extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleDelete = this.handleDelete.bind(this);
     this.handleToggleStatus = this.handleToggleStatus.bind(this);
-  }
-
-  handleDelete() {
-    this.props.removeTodo(this.props.todo.id);
   }
 
   handleToggleStatus() {
@@ -20,15 +16,15 @@ class TodoListItem extends React.Component {
     const { todo } = this.props;
     return(
       <li>
-        {todo.title}
+        <div>
+          <h3>{todo.title}</h3>
 
-        <button onClick={this.handleDelete} >
-          Delete
-        </button>
+          <button onClick={this.handleToggleStatus} >
+            {todo.done === true ? 'Undo' : 'Done' }
+          </button>
+        </div>
 
-        <button onClick={this.handleToggleStatus} >
-          {todo.done === true ? 'Undo' : 'Done' }
-        </button>
+        <TodoDetailViewContainer todo={todo} />
       </li>
     );
   }
