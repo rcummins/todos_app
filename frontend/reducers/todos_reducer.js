@@ -1,7 +1,8 @@
 import {
   RECEIVE_TODOS,
   RECEIVE_TODO,
-  REMOVE_TODO
+  REMOVE_TODO, 
+  UPDATE_TODO
 } from '../actions/todo_actions';
 
 const initialState = {
@@ -23,6 +24,8 @@ const todosReducer = ( oldState = initialState, action ) => {
   Object.freeze(oldState);
 
   let newState;
+  let newTodo;
+  let idToDelete;
   switch (action.type) {
 
     case RECEIVE_TODOS:
@@ -33,15 +36,23 @@ const todosReducer = ( oldState = initialState, action ) => {
       return newState;
 
     case RECEIVE_TODO:
-      let newTodo = {};
+      newTodo = {};
       newTodo[action.todo.id] = action.todo;
       return Object.assign({}, oldState, newTodo);
 
     case REMOVE_TODO:
       newState = Object.assign({}, oldState);
-      let idToDelete = action.id;
+      idToDelete = action.id;
       delete newState[idToDelete];
       return newState;
+    
+    case UPDATE_TODO:
+      newState = Object.assign({}, oldState);
+      idToDelete = action.todo.id;
+      delete newState[idToDelete];
+      newTodo = {};
+      newTodo[action.todo.id] = action.todo;
+      return Object.assign({}, newState, newTodo);
 
     default:
       return oldState;
