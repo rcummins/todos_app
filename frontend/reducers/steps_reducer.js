@@ -1,8 +1,7 @@
 import {
   RECEIVE_STEPS,
   RECEIVE_STEP,
-  REMOVE_STEP,
-  TOGGLE_STEP_STATUS
+  REMOVE_STEP
 } from '../actions/step_actions';
 
 const initialState = {
@@ -46,11 +45,6 @@ const stepsReducer = ( oldState = initialState, action ) => {
       newState = Object.assign({}, oldState);
       idToDelete = action.id;
       delete newState[idToDelete];
-      return newState;
-
-    case TOGGLE_STEP_STATUS:
-      newState = Object.assign({}, oldState);
-      newState[action.id].done = !newState[action.id].done;
       return newState;
 
     default:
