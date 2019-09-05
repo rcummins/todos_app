@@ -19,6 +19,6 @@ export const removeStep = id => ({
 });
 
 export const toggleStepStatus = id => ({
-  type:TOGGLE_STEP_STATUS,
+  type: TOGGLE_STEP_STATUS,
   id
 });
