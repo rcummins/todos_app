@@ -17,7 +17,9 @@ class TodoListItem extends React.Component {
   }
 
   handleToggleStatus() {
-    this.props.toggleStatus(this.props.todo.id);
+    let updatedTodo = Object.assign({}, this.props.todo);
+    updatedTodo.done = !updatedTodo.done;
+    this.props.receiveTodo(updatedTodo);
   }
 
   render() {
@@ -28,7 +30,7 @@ class TodoListItem extends React.Component {
           <h3 onClick={this.handleToggleDetail} >{todo.title}</h3>
 
           <button onClick={this.handleToggleStatus} >
-            {todo.done ? 'Undo' : 'Done' }
+            { todo.done ? 'Undo' : 'Done' }
           </button>
         </div>
 

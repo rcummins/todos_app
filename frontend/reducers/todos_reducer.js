@@ -1,8 +1,7 @@
 import {
   RECEIVE_TODOS,
   RECEIVE_TODO,
-  REMOVE_TODO, 
-  TOGGLE_STATUS
+  REMOVE_TODO
 } from '../actions/todo_actions';
 
 const initialState = {
@@ -44,11 +43,6 @@ const todosReducer = ( oldState = initialState, action ) => {
       newState = Object.assign({}, oldState);
       idToDelete = action.id;
       delete newState[idToDelete];
-      return newState;
-    
-    case TOGGLE_STATUS:
-      newState = Object.assign({}, oldState);
-      newState[action.id].done = !newState[action.id].done;
       return newState;
 
     default:
