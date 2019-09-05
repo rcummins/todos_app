@@ -3,7 +3,6 @@ import React from 'react';
 class StepListItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state={};
 
     this.handleDelete = this.handleDelete.bind(this);
     this.handleToggleStatus = this.handleToggleStatus.bind(this);
@@ -31,7 +30,7 @@ class StepListItem extends React.Component {
           { step.done ? 'Undo' : 'Done' }
         </button>
 
-        <button onClick={this.handleDelete}>Delete</button>
+        <button onClick={this.handleDelete}>Delete step</button>
       </div>
     )
   }

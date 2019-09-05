@@ -20,7 +20,7 @@ class TodoDetailView extends React.Component {
 
         <StepListContainer todo={todo} />
 
-        <button onClick={this.handleDelete} >Delete</button>
+        <button onClick={this.handleDelete} >Delete todo</button>
       </div>
     );
   }
