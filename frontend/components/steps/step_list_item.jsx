@@ -6,10 +6,17 @@ class StepListItem extends React.Component {
     this.state={};
 
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleToggleStatus = this.handleToggleStatus.bind(this);
   }
 
   handleDelete() {
     this.props.removeStep(this.props.step.id);
+  }
+
+  handleToggleStatus() {
+    let updatedStep = Object.assign({}, this.props.step);
+    updatedStep.done = !updatedStep.done;
+    this.props.receiveStep(updatedStep);
   }
 
   render() {
@@ -20,7 +27,9 @@ class StepListItem extends React.Component {
         <h4>{step.title}</h4>
         <p>{step.body}</p>
 
-        <p>Button to toggle step status will go here</p>
+        <button onClick={this.handleToggleStatus} >
+          { step.done ? 'Undo' : 'Done' }
+        </button>
 
         <button onClick={this.handleDelete}>Delete</button>
       </div>
