@@ -29,9 +29,7 @@ const todosReducer = ( oldState = initialState, action ) => {
 
     case RECEIVE_TODOS:
       newState = {};
-      for (let i = 0; i < action.todos.length; i++) {
-        newState[action.todos[i].id] = action.todos[i];
-      }
+      action.todos.forEach( todo => newState[todo.id] = todo );
       return newState;
 
     case RECEIVE_TODO:

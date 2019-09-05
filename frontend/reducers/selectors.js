@@ -1,18 +1,18 @@
-export const allTodos = state => {
-  let todoIds = Object.keys(state.todos);
-  let todos = todoIds.map( id => (
-    state.todos[id]
+export const allTodos = ({ todos }) => {
+  let todoIds = Object.keys(todos);
+  let todosArray = todoIds.map( id => (
+    todos[id]
   ));
-  return todos;
+  return todosArray;
 };
 
-export const stepsByTodoId = (state, todoId) => {
-  let stepIds = Object.keys(state.steps);
-  let steps = [];
-  for (let i = 0; i < stepIds.length; i++) {
-    if (state.steps[stepIds[i]].todo_id === todoId) {
-      steps.push(state.steps[stepIds[i]]);
+export const stepsByTodoId = ({ steps }, todoId) => {
+  let stepIds = Object.keys(steps);
+  let stepsArray = [];
+  stepIds.forEach( stepId => {
+    if (steps[stepId].todo_id === todoId) {
+      stepsArray.push(steps[stepId]);
     }
-  }
-  return steps;
+  });
+  return stepsArray;
 };

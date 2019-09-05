@@ -31,9 +31,7 @@ const stepsReducer = ( oldState = initialState, action ) => {
 
     case RECEIVE_STEPS:
       newState = {};
-      for (let i = 0; i < action.steps.length; i++) {
-        newState[action.steps[i].id] = action.steps[i];
-      }
+      action.steps.forEach( step => newState[step.id] = step );
       return newState;
 
     case RECEIVE_STEP:
