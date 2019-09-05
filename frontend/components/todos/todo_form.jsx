@@ -39,7 +39,7 @@ class TodoForm extends React.Component {
   render() {
     const { title, body } = this.state;
     return(
-      <div>
+      <div class="todo-form">
 
         <label htmlFor="title">
           Title
@@ -60,7 +60,11 @@ class TodoForm extends React.Component {
           </textarea>
         </label>
 
-        <button onClick={this.handleClick}>Add todo</button>
+        <button
+          className='button-submit'
+          onClick={this.handleClick}>
+          Add todo
+        </button>
 
       </div>
     );

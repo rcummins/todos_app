@@ -26,11 +26,17 @@ class StepListItem extends React.Component {
         <h4>{step.title}</h4>
         <p>{step.body}</p>
 
-        <button onClick={this.handleToggleStatus} >
+        <button
+          className={ step.done ? 'button-undo' : 'button-done' }
+          onClick={this.handleToggleStatus} >
           { step.done ? 'Undo' : 'Done' }
         </button>
 
-        <button onClick={this.handleDelete}>Delete step</button>
+        <button
+          className='button-delete'
+          onClick={this.handleDelete}>
+          Delete step
+        </button>
       </div>
     )
   }

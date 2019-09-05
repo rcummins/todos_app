@@ -61,7 +61,11 @@ class StepForm extends React.Component {
           </input>
         </label>
 
-        <button onClick={this.handleSubmit}>Add step</button>
+        <button
+          className='button-submit'
+          onClick={this.handleSubmit}>
+          Add step
+        </button>
 
       </div>
     )
