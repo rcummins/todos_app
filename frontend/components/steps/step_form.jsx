@@ -15,18 +15,20 @@ class StepForm extends React.Component {
   }
 
   handleSubmit() {
-    let newStep = {
-      id: uniqueId(),
-      title: this.state.title,
-      body: this.state.body,
-      done: false,
-      todo_id: this.props.todo_id
-    };
-    this.props.receiveStep(newStep);
-    this.setState({
-      title: '',
-      body: ''
-    });
+    if (this.state.title !== '' && this.state.body !== '') {
+      let newStep = {
+        id: uniqueId(),
+        title: this.state.title,
+        body: this.state.body,
+        done: false,
+        todo_id: this.props.todo_id
+      };
+      this.props.receiveStep(newStep);
+      this.setState({
+        title: '',
+        body: ''
+      });
+    }
   }
 
   setBody(e) {

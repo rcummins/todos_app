@@ -23,17 +23,19 @@ class TodoForm extends React.Component {
   }
 
   handleClick() {
-    let todo = {
-      id: uniqueId(),
-      title: this.state.title,
-      body: this.state.body,
-      done: false
-    };
-    this.props.receiveTodo(todo)
-    this.setState({
-      title: '',
-      body: ''
-    });
+    if (this.state.title !== '' && this.state.body !== '') {
+      let todo = {
+        id: uniqueId(),
+        title: this.state.title,
+        body: this.state.body,
+        done: false
+      };
+      this.props.receiveTodo(todo)
+      this.setState({
+        title: '',
+        body: ''
+      });
+    }
   }
 
   render() {
