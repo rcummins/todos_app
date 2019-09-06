@@ -39,11 +39,12 @@ class TodoForm extends React.Component {
   render() {
     const { title, body } = this.state;
     return(
-      <div className="form">
+      <div className="form add-todo">
 
         <div className="form-input">
           <label htmlFor="title">Title:</label>
           <input
+            className="input-add-todo"
             type="text"
             id="title"
             onChange={this.setTitle}
@@ -54,6 +55,7 @@ class TodoForm extends React.Component {
         <div className="form-input">
           <label htmlFor="body">Body:</label>
           <textarea
+            className="input-add-todo"
             id="body"
             onChange={this.setBody}
             value={body}>
@@ -61,7 +63,7 @@ class TodoForm extends React.Component {
         </div>
 
         <button
-          className='button-submit'
+          className='button-add-todo'
           onClick={this.handleClick}>
           Add todo
         </button>

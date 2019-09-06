@@ -13,16 +13,20 @@ button {
   cursor: pointer;
 }
 
+.button-add-step {
+  background-color: #7f50ff;
+}
+
+.button-add-todo {
+  background-color: #50d0ff;
+}
+
 .button-delete {
   background-color: #ff50d0;
 }
 
 .button-done {
   background-color: #ff7f50;
-}
-
-.button-submit {
-  background-color: #50d0ff;
 }
 
 .button-undo {
@@ -40,9 +44,17 @@ button {
   align-items: center;
   padding: 20px;
   margin: 20px;
+  border-radius: 8px;
+}
+
+.form.add-step {
+  background-color: #e3d9ff;
+  border: 1px solid #7f50ff;
+}
+
+.form.add-todo {
   background-color: #d9f5ff;
   border: 1px solid #50d0ff;
-  border-radius: 8px;
 }
 
 .form-input {
@@ -75,8 +87,16 @@ h4 {
 input, textarea {
   padding: 5px;
   width: 100%;
-  border: 1px solid #50d0ff;
   border-radius: 5px;
+  border: inherit;
+}
+
+.input-add-step {
+  border: 1px solid #7f50ff;
+}
+
+.input-add-todo{
+  border: 1px solid #50d0ff;
 }
 
 label {

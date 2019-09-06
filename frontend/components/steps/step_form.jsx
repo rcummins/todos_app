@@ -39,11 +39,12 @@ class StepForm extends React.Component {
 
   render() {
     return(
-      <div className="form">
+      <div className="form add-step">
 
         <div className="form-input">
           <label htmlFor="title">Title:</label>
           <input
+            className="input-add-step"
             type="text"
             id="title"
             value={this.state.title}
@@ -54,6 +55,7 @@ class StepForm extends React.Component {
         <div className="form-input">
           <label htmlFor="body">Body:</label>
           <textarea
+            className="input-add-step"
             id="body"
             value={this.state.body}
             onChange={this.setBody}>
@@ -61,7 +63,7 @@ class StepForm extends React.Component {
         </div>
 
         <button
-          className='button-submit'
+          className='button-add-step'
           onClick={this.handleSubmit}>
           Add step
         </button>
