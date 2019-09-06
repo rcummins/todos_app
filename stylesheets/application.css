@@ -1,5 +1,6 @@
 body {
   background-color: #ffe3d9;
+  font-family: 'Nunito', sans-serif;
 }
 
 button {
@@ -7,7 +8,6 @@ button {
   border-radius: 8px;
   font-size: 16px;
   font-weight: 700;
-  font-family: 'Nunito', sans-serif;
   border: none;
   color: white;
   cursor: pointer;
@@ -34,31 +34,52 @@ button {
   margin: 0 auto;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+  background-color: #d9f5ff;
+  border: 1px solid #50d0ff;
+  border-radius: 8px;
+}
+
+.form-input {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 h1 {
   padding: 20px 0px 0px;
   font-size: 30px;
   font-weight: 800;
   text-align: center;
-  font-family: 'Nunito', sans-serif;
   color: #ff7f50;
 }
 
 h3 {
   font-size: 20px;
   font-weight: 700;
-  font-family: 'Nunito', sans-serif;
   cursor: pointer;
 }
 
-.todo-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  margin: 20px;
-  background-color: #ffd5c6;
-  border: 1px solid #ff7f50;
-  border-radius: 8px;
+input, textarea {
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #50d0ff;
+  border-radius: 5px;
+}
+
+label {
+  width: 60px;
+}
+
+textarea {
+  height: 60px;
 }
 
 .todo-header {

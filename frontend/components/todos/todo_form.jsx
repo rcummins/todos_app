@@ -39,26 +39,26 @@ class TodoForm extends React.Component {
   render() {
     const { title, body } = this.state;
     return(
-      <div class="todo-form">
+      <div className="form">
 
-        <label htmlFor="title">
-          Title
+        <div className="form-input">
+          <label htmlFor="title">Title:</label>
           <input
             type="text"
             id="title"
             onChange={this.setTitle}
             value={title}>
           </input>
-        </label>
+        </div>
 
-        <label htmlFor="body">
-          Body
+        <div className="form-input">
+          <label htmlFor="body">Body:</label>
           <textarea
             id="body"
             onChange={this.setBody}
             value={body}>
           </textarea>
-        </label>
+        </div>
 
         <button
           className='button-submit'

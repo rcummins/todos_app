@@ -39,27 +39,26 @@ class StepForm extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="form">
 
-        <label htmlFor="title">
-          Title
+        <div className="form-input">
+          <label htmlFor="title">Title:</label>
           <input
             type="text"
             id="title"
             value={this.state.title}
             onChange={this.setTitle}>
           </input>
-        </label>
+        </div>
 
-        <label htmlFor="body">
-          Body
-          <input
-            type="text"
+        <div className="form-input">
+          <label htmlFor="body">Body:</label>
+          <textarea
             id="body"
             value={this.state.body}
             onChange={this.setBody}>
-          </input>
-        </label>
+          </textarea>
+        </div>
 
         <button
           className='button-submit'
