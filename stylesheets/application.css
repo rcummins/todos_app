@@ -1,6 +1,6 @@
 body {
-  background-color: #ffe3d9;
   font-family: 'Nunito', sans-serif;
+  background-color: #ffe3d9;
 }
 
 button {
@@ -67,6 +67,11 @@ h3 {
   cursor: pointer;
 }
 
+h4 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
 input, textarea {
   padding: 5px;
   width: 100%;
@@ -78,13 +83,30 @@ label {
   width: 60px;
 }
 
+.step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step-item {
+  padding: 20px;
+  margin: 20px;
+  background-color: #ffe3d9;
+  border: 1px solid #ff7f50;
+  border-radius: 8px;
+}
+
+.step-item p {
+  padding: 0px 0px 20px;
+}
+
 textarea {
   height: 60px;
 }
 
 .todo-header {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 

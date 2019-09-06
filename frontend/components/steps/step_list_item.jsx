@@ -22,15 +22,18 @@ class StepListItem extends React.Component {
     const { step } = this.props;
 
     return(
-      <div>
-        <h4>{step.title}</h4>
-        <p>{step.body}</p>
+      <div className="step-item">
+        <div className="step-header">
+          <h4>{step.title}</h4>
 
-        <button
-          className={ step.done ? 'button-undo' : 'button-done' }
-          onClick={this.handleToggleStatus} >
-          { step.done ? 'Undo' : 'Done' }
-        </button>
+          <button
+            className={ step.done ? 'button-undo' : 'button-done' }
+            onClick={this.handleToggleStatus} >
+            { step.done ? 'Undo' : 'Done' }
+          </button>
+        </div>
+
+        <p>{step.body}</p>
 
         <button
           className='button-delete'
