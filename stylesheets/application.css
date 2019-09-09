@@ -1,0 +1,139 @@
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #ffe3d9;
+}
+
+button {
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.button-add-step {
+  background-color: #7f50ff;
+}
+
+.button-add-todo {
+  background-color: #50d0ff;
+}
+
+.button-delete {
+  background-color: #ff50d0;
+}
+
+.button-done {
+  background-color: #ff7f50;
+}
+
+.button-undo {
+  background-color: gray;
+}
+
+#content {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+.form.add-step {
+  background-color: #e3d9ff;
+  border: 1px solid #7f50ff;
+}
+
+.form.add-todo {
+  background-color: #d9f5ff;
+  border: 1px solid #50d0ff;
+}
+
+.form-input {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+h1 {
+  padding: 20px 0px 0px;
+  font-size: 30px;
+  font-weight: 800;
+  text-align: center;
+  color: #ff7f50;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+input, textarea {
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  border: inherit;
+}
+
+.input-add-step {
+  border: 1px solid #7f50ff;
+}
+
+.input-add-todo{
+  border: 1px solid #50d0ff;
+}
+
+label {
+  width: 60px;
+}
+
+.step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step-item {
+  padding: 20px;
+  margin: 20px;
+  background-color: #ffe3d9;
+  border: 1px solid #ff7f50;
+  border-radius: 8px;
+}
+
+.step-item p {
+  padding: 0px 0px 20px;
+}
+
+textarea {
+  height: 60px;
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-item {
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+  border: 1px solid #ff7f50;
+  border-radius: 8px;
+}
