@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import { allTodos } from '../../reducers/selectors';
 import {
   receiveTodo,
-  fetchTodos
+  fetchTodos,
+  createTodo
 } from '../../actions/todo_actions';
 import TodoList from './todo_list';
 
@@ -12,7 +13,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   receiveTodo: todo => dispatch(receiveTodo(todo)),
-  fetchTodos: () => dispatch(fetchTodos())
+  fetchTodos: () => dispatch(fetchTodos()),
+  createTodo: todo => dispatch(createTodo(todo))
 });
 
 export default connect(
