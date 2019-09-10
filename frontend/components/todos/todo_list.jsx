@@ -12,7 +12,12 @@ class TodoList extends React.Component {
   }
 
   render() {
-    const { todos, receiveTodo, createTodo, errors, clearErrors } = this.props;
+    const {
+      todos,
+      createTodo,
+      updateTodo,
+      errors,
+      clearErrors} = this.props;
     return(
       <div>
         <ul>
@@ -21,7 +26,7 @@ class TodoList extends React.Component {
               <TodoListItem
                 key={index}
                 todo={todo}
-                receiveTodo={receiveTodo} />
+                updateTodo={updateTodo} />
             ))
           }
         </ul>

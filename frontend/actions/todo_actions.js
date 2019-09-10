@@ -32,3 +32,10 @@ export const createTodo = todo => dispatch => (
     error => dispatch(receiveErrors(error.responseJSON))
   )
 );
+
+export const updateTodo = todo => dispatch => (
+  TodoAPIUtil.updateTodo(todo).then(
+    todo => dispatch(receiveTodo(todo)),
+    error => dispatch(receiveErrors(error.responseJSON))
+  )
+);
