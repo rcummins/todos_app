@@ -1,5 +1,4 @@
 import React from 'react';
-import { uniqueId } from '../../util/form_util';
 
 class TodoForm extends React.Component {
   constructor(props) {
@@ -23,24 +22,43 @@ class TodoForm extends React.Component {
   }
 
   handleClick() {
-    if (this.state.title !== '' && this.state.body !== '') {
-      let todo = {
-        todo: {
-          title: this.state.title,
-          body: this.state.body,
-          done: false
-        }
-      };
-      this.props.createTodo(todo).then(
-        () => this.setState({ title: '', body: ''})
-      );
-    }
+    let todo = {
+      todo: {
+        title: this.state.title,
+        body: this.state.body,
+        done: false
+      }
+    };
+    this.props.createTodo(todo).then(
+      () => {
+        this.setState({ title: '', body: ''});
+        this.props.clearErrors();
+      }
+    );
   }
 
   render() {
     const { title, body } = this.state;
+    const { errors } = this.props;
+
+    let errorMessage;
+    if (errors.length > 0) {
+      errorMessage = (
+        <div className="error-message">
+          <p>Please fix the following issue(s):</p>
+          <ul>
+            { errors.map( (error, index) => (
+              <li key={index}>{error}</li>
+            ))}
+          </ul>
+        </div>
+      );
+    }
+
     return(
       <div className="form add-todo">
+
+        {errorMessage}
 
         <div className="form-input">
           <label htmlFor="title">Title:</label>
