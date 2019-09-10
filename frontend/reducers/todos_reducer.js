@@ -4,22 +4,7 @@ import {
   REMOVE_TODO
 } from '../actions/todo_actions';
 
-const initialState = {
-  1: {
-    id: 1,
-    title: "cook dinner",
-    body: "macaroni and cheese",
-    done: false
-  },
-  2: {
-    id: 2,
-    title: "bake cake",
-    body: "vanilla with buttercream frosting",
-    done: true
-  }
-};
-
-const todosReducer = ( oldState = initialState, action ) => {
+const todosReducer = ( oldState = {}, action ) => {
   Object.freeze(oldState);
 
   let newState;
