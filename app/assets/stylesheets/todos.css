@@ -38,6 +38,20 @@ button {
   margin: 0 auto;
 }
 
+.error-message {
+  width: 100%;
+  color: red;
+}
+
+.error-message li {
+  margin: 0 0 0 30px;
+  list-style: disc;
+}
+
+.error-message p {
+  margin: 0 0 0 10px;
+}
+
 .form {
   display: flex;
   flex-direction: column;
