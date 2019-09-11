@@ -29,6 +29,6 @@ export const fetchSteps = () => dispatch => (
 export const createStep = step => dispatch => (
   StepAPIUtil.createStep(step).then(
     step => dispatch(receiveStep(step)),
-    error => dispatch(receiveErrors(error))
+    error => dispatch(receiveErrors(error.responseJSON))
   )
 );
