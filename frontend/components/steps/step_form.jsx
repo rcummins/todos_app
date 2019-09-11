@@ -1,5 +1,4 @@
 import React from 'react';
-import { uniqueId } from '../../util/form_util';
 
 class StepForm extends React.Component {
   constructor(props) {
@@ -15,18 +14,15 @@ class StepForm extends React.Component {
   }
 
   handleSubmit() {
-    if (this.state.title !== '' && this.state.body !== '') {
-      let newStep = {
-        id: uniqueId(),
-        title: this.state.title,
-        body: this.state.body,
-        done: false,
-        todo_id: this.props.todo_id
-      };
-      this.props.createStep({ step: newStep}).then(
-        this.setState({title: '', body: ''})
-      );
-    }
+    let newStep = {
+      title: this.state.title,
+      body: this.state.body,
+      done: false,
+      todo_id: this.props.todo_id
+    };
+    this.props.createStep({ step: newStep}).then(
+      this.setState({title: '', body: ''})
+    );
   }
 
   setBody(e) {
