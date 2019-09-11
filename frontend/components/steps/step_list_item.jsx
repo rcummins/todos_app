@@ -15,7 +15,7 @@ class StepListItem extends React.Component {
   handleToggleStatus() {
     let updatedStep = Object.assign({}, this.props.step);
     updatedStep.done = !updatedStep.done;
-    this.props.receiveStep(updatedStep);
+    this.props.updateStep({ step: updatedStep });
   }
 
   render() {

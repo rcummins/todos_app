@@ -35,3 +35,9 @@ export const createStep = step => dispatch => (
     }))
   )
 );
+
+export const updateStep = step => dispatch => (
+  StepAPIUtil.updateStep(step).then(
+    step => dispatch(receiveStep(step))
+  )
+);

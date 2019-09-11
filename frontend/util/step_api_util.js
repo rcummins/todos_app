@@ -12,3 +12,11 @@ export const createStep = step => (
     data: step
   })
 );
+
+export const updateStep = step => (
+  $.ajax({
+    method: 'PUT',
+    url: `/api/steps/${step.step.id}`,
+    data: step
+  })
+);
