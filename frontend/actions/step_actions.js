@@ -1,4 +1,5 @@
 import * as StepAPIUtil from '../util/step_api_util';
+import { receiveErrors } from './error_actions';
 
 export const RECEIVE_STEPS = "RECEIVE_STEPS";
 export const RECEIVE_STEP = "RECEIVE_STEP";
@@ -22,5 +23,12 @@ export const removeStep = id => ({
 export const fetchSteps = () => dispatch => (
   StepAPIUtil.fetchSteps().then(
     steps => dispatch(receiveSteps(steps))
+  )
+);
+
+export const createStep = step => dispatch => (
+  StepAPIUtil.createStep(step).then(
+    step => dispatch(receiveStep(step)),
+    error => dispatch(receiveErrors(error))
   )
 );
