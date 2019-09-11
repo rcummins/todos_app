@@ -35,14 +35,12 @@ export const createTodo = todo => dispatch => (
 
 export const updateTodo = todo => dispatch => (
   TodoAPIUtil.updateTodo(todo).then(
-    todo => dispatch(receiveTodo(todo)),
-    error => dispatch(receiveTodoErrors(error.responseJSON))
+    todo => dispatch(receiveTodo(todo))
   )
 );
 
 export const deleteTodo = todo => dispatch => (
   TodoAPIUtil.deleteTodo(todo).then(
-    todo => dispatch(removeTodo(todo.id)),
-    error => dispatch(receiveTodoErrors(error.responseJSON))
+    todo => dispatch(removeTodo(todo.id))
   )
 );
