@@ -41,3 +41,9 @@ export const updateStep = step => dispatch => (
     step => dispatch(receiveStep(step))
   )
 );
+
+export const deleteStep = step => dispatch => (
+  StepAPIUtil.deleteStep(step).then(
+    step => dispatch(removeStep(step.id))
+  )
+);

@@ -9,7 +9,7 @@ class StepListItem extends React.Component {
   }
 
   handleDelete() {
-    this.props.removeStep(this.props.step.id);
+    this.props.deleteStep(this.props.step);
   }
 
   handleToggleStatus() {

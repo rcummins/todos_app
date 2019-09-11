@@ -20,3 +20,10 @@ export const updateStep = step => (
     data: step
   })
 );
+
+export const deleteStep = step => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/steps/${step.id}`
+  })
+);
