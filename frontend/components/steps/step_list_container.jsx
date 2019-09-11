@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
   fetchSteps: () => dispatch(fetchSteps()),
   createStep: step => dispatch(createStep(step)),
-  clearStepErrors: () => dispatch(clearStepErrors())
+  clearStepErrors: todo_id => dispatch(clearStepErrors(todo_id))
 });
 
 export default connect(

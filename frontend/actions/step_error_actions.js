@@ -6,6 +6,7 @@ export const receiveStepErrors = errors => ({
   errors
 });
 
-export const clearStepErrors = () => ({
-  type: CLEAR_STEP_ERRORS
+export const clearStepErrors = todo_id => ({
+  type: CLEAR_STEP_ERRORS,
+  todo_id
 });

@@ -23,7 +23,7 @@ class StepForm extends React.Component {
     this.props.createStep({ step: newStep}).then(
       () => {
         this.setState({title: '', body: ''})
-        this.props.clearStepErrors();
+        this.props.clearStepErrors(this.props.todo_id);
       }
     );
   }
@@ -40,17 +40,20 @@ class StepForm extends React.Component {
     const { stepErrors } = this.props;
 
     let errorMessage;
-    if (stepErrors.length > 0) {
-      errorMessage = (
-        <div className="error-message">
-          <p>Please fix the following issue(s):</p>
-          <ul>
-            { stepErrors.map( (error, index) => (
-              <li key={index}>{error}</li>
-            ))}
-          </ul>
-        </div>
-      )
+    if (stepErrors.hasOwnProperty(this.props.todo_id)) {
+      const errors = stepErrors[this.props.todo_id].errors;
+      if (errors.length > 0) {
+        errorMessage = (
+          <div className="error-message">
+            <p>Please fix the following issue(s):</p>
+            <ul>
+              { errors.map( (error, index) => (
+                <li key={index}>{error}</li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
     }
 
     return(
