@@ -32,22 +32,22 @@ class TodoForm extends React.Component {
     this.props.createTodo(todo).then(
       () => {
         this.setState({ title: '', body: ''});
-        this.props.clearErrors();
+        this.props.clearTodoErrors();
       }
     );
   }
 
   render() {
     const { title, body } = this.state;
-    const { errors } = this.props;
+    const { todoErrors } = this.props;
 
     let errorMessage;
-    if (errors.length > 0) {
+    if (todoErrors.length > 0) {
       errorMessage = (
         <div className="error-message">
           <p>Please fix the following issue(s):</p>
           <ul>
-            { errors.map( (error, index) => (
+            { todoErrors.map( (error, index) => (
               <li key={index}>{error}</li>
             ))}
           </ul>

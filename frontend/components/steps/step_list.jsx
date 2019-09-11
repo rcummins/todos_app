@@ -12,7 +12,12 @@ class StepList extends React.Component {
   }
 
   render() {
-    const { steps, todo_id, createStep, errors, clearErrors } = this.props;
+    const {
+      steps,
+      todo_id,
+      createStep,
+      stepErrors,
+      clearStepErrors } = this.props;
     return(
       <div>
         <ul>
@@ -27,8 +32,8 @@ class StepList extends React.Component {
         <StepForm
           todo_id={todo_id}
           createStep={createStep}
-          errors={errors}
-          clearErrors={clearErrors} />
+          stepErrors={stepErrors}
+          clearStepErrors={clearStepErrors} />
       </div>
     );
   }

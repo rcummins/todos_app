@@ -23,7 +23,7 @@ class StepForm extends React.Component {
     this.props.createStep({ step: newStep}).then(
       () => {
         this.setState({title: '', body: ''})
-        this.props.clearErrors();
+        this.props.clearStepErrors();
       }
     );
   }
@@ -37,15 +37,15 @@ class StepForm extends React.Component {
   }
 
   render() {
-    const { errors } = this.props;
+    const { stepErrors } = this.props;
 
     let errorMessage;
-    if (errors.length > 0) {
+    if (stepErrors.length > 0) {
       errorMessage = (
         <div className="error-message">
           <p>Please fix the following issue(s):</p>
           <ul>
-            { errors.map( (error, index) => (
+            { stepErrors.map( (error, index) => (
               <li key={index}>{error}</li>
             ))}
           </ul>

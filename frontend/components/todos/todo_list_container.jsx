@@ -5,19 +5,19 @@ import {
   createTodo,
   updateTodo
 } from '../../actions/todo_actions';
-import { clearErrors } from '../../actions/error_actions';
+import { clearTodoErrors } from '../../actions/todo_error_actions';
 import TodoList from './todo_list';
 
 const mapStateToProps = state => ({
   todos: allTodos(state),
-  errors: state.errors
+  todoErrors: state.todoErrors
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchTodos: () => dispatch(fetchTodos()),
   createTodo: todo => dispatch(createTodo(todo)),
   updateTodo: todo => dispatch(updateTodo(todo)),
-  clearErrors: () => dispatch(clearErrors())
+  clearTodoErrors: () => dispatch(clearTodoErrors())
 });
 
 export default connect(
