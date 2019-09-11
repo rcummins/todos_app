@@ -6,5 +6,9 @@ Rails.application.routes.draw do
     resources :todos, 
       only: [:index, :create, :show, :update, :destroy],
       defaults: { format: :json }
+
+    resources :steps,
+      only: [:index, :create, :show, :update, :destroy],
+      defaults: { format: :json }
   end
 end
