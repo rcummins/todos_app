@@ -9,8 +9,10 @@ class StepForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.setBody = this.setBody.bind(this);
-    this.setTitle = this.setTitle.bind(this);
+  }
+
+  handleInput(key) {
+    return e => this.setState({ [key]: e.target.value });
   }
 
   handleSubmit() {
@@ -26,14 +28,6 @@ class StepForm extends React.Component {
         this.props.clearStepErrors(this.props.todo_id);
       }
     );
-  }
-
-  setBody(e) {
-    this.setState({ body: e.currentTarget.value });
-  }
-
-  setTitle(e) {
-    this.setState({ title: e.currentTarget.value });
   }
 
   render() {
@@ -68,7 +62,7 @@ class StepForm extends React.Component {
             type="text"
             id="title"
             value={this.state.title}
-            onChange={this.setTitle}>
+            onChange={this.handleInput('title')}>
           </input>
         </div>
 
@@ -78,7 +72,7 @@ class StepForm extends React.Component {
             className="input-add-step"
             id="body"
             value={this.state.body}
-            onChange={this.setBody}>
+            onChange={this.handleInput('body')}>
           </textarea>
         </div>
 

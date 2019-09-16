@@ -8,20 +8,14 @@ class TodoForm extends React.Component {
       body: ''
     };
 
-    this.setTitle = this.setTitle.bind(this);
-    this.setBody = this.setBody.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  setTitle(e) {
-    this.setState({ title: e.currentTarget.value });
+  handleInput(key) {
+    return e => this.setState({ [key]: e.target.value });
   }
 
-  setBody(e) {
-    this.setState({ body: e.currentTarget.value });
-  }
-
-  handleClick() {
+  handleSubmit() {
     let todo = {
       todo: {
         title: this.state.title,
@@ -66,7 +60,7 @@ class TodoForm extends React.Component {
             className="input-add-todo"
             type="text"
             id="title"
-            onChange={this.setTitle}
+            onChange={this.handleInput('title')}
             value={title}>
           </input>
         </div>
@@ -76,14 +70,14 @@ class TodoForm extends React.Component {
           <textarea
             className="input-add-todo"
             id="body"
-            onChange={this.setBody}
+            onChange={this.handleInput('body')}
             value={body}>
           </textarea>
         </div>
 
         <button
           className='button-add-todo'
-          onClick={this.handleClick}>
+          onClick={this.handleSubmit}>
           Add todo
         </button>
 
