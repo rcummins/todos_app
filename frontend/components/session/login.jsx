@@ -18,15 +18,31 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.login({ user: this.state }).then(
-      () => this.props.history.push('/todos')
+      () => {
+        this.props.history.push('/todos');
+        this.props.clearSessionErrors();
+      }
     );
   }
 
   render() {
+    const { sessionErrors } = this.props;
+
+    let errorMessage;
+    if (sessionErrors.length > 0) {
+      errorMessage = (
+        <div className="error-message">
+          <p>{sessionErrors}</p>
+        </div>
+      )
+    }
+
     return(
       <div className="form login">
         <h2>Log in</h2>
         <form>
+
+          { errorMessage }
 
           <div className="form-input">
             <label htmlFor="username">Username:</label>

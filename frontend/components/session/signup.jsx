@@ -18,15 +18,36 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createNewUser({ user: this.state }).then(
-      () => this.props.history.push('/todos')
+      () => {
+        this.props.history.push('/todos');
+        this.props.clearSessionErrors();
+      }
     );
   }
 
   render() {
+    const { sessionErrors } = this.props;
+
+    let errorMessage;
+    if (sessionErrors.length > 0) {
+      errorMessage = (
+        <div className="error-message">
+          <p>Please fix the following issue(s):</p>
+          <ul>
+            { sessionErrors.map( (error, index) => (
+              <li key={index}>{error}</li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+
     return(
       <div className="form signup">
         <h2>Sign up</h2>
         <form>
+
+          { errorMessage }
 
           <div className="form-input">
             <label htmlFor="username">Username:</label>

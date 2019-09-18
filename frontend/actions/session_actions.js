@@ -1,4 +1,5 @@
 import { postUser, postSession, deleteSession } from '../util/session_api_util';
+import { receiveSessionErrors } from './session_error_actions';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
@@ -14,13 +15,15 @@ const logoutCurrentUser = () => ({
 
 export const createNewUser = formUser => dispatch => (
   postUser(formUser).then(
-    user => dispatch(receiveCurrentUser(user))
+    user => dispatch(receiveCurrentUser(user)),
+    error => dispatch(receiveSessionErrors(error.responseJSON))
   )
 );
 
 export const login = formUser => dispatch => (
   postSession(formUser).then(
-    user => dispatch(receiveCurrentUser(user))
+    user => dispatch(receiveCurrentUser(user)),
+    error => dispatch(receiveSessionErrors(error.responseJSON))
   )
 );
 
