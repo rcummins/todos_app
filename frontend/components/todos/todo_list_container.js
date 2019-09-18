@@ -10,7 +10,8 @@ import TodoList from './todo_list';
 
 const mapStateToProps = state => ({
   todos: allTodos(state),
-  todoErrors: state.todoErrors
+  todoErrors: state.todoErrors,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

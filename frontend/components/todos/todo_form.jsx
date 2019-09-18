@@ -20,7 +20,8 @@ class TodoForm extends React.Component {
       todo: {
         title: this.state.title,
         body: this.state.body,
-        done: false
+        done: false,
+        user_id: this.props.currentUser.id
       }
     };
     this.props.createTodo(todo).then(

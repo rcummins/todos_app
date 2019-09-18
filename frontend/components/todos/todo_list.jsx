@@ -17,7 +17,8 @@ class TodoList extends React.Component {
       createTodo,
       updateTodo,
       todoErrors,
-      clearTodoErrors} = this.props;
+      clearTodoErrors,
+      currentUser} = this.props;
     return(
       <div>
         <ul>
@@ -33,7 +34,8 @@ class TodoList extends React.Component {
         <TodoForm
           createTodo={createTodo}
           todoErrors={todoErrors}
-          clearTodoErrors={clearTodoErrors} />
+          clearTodoErrors={clearTodoErrors}
+          currentUser={currentUser} />
       </div>
     );
   }
