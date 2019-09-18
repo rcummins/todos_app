@@ -18,7 +18,7 @@ export default ({ logout, currentUser }) => {
 
   return(
     <header>
-      <h1>Todos App</h1>
+      <Link className="logo" to="/todos">Todos App</Link>
 
       { display }
     </header>
