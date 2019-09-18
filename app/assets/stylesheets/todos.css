@@ -36,6 +36,11 @@ button {
   background-color: #ff7f50;
 }
 
+.button-login, .button-signup {
+  margin: 20px 0 0;
+  background-color: #ff7f50;
+}
+
 .button-nav {
   margin: 0px 10px;
   background-color: white;
@@ -83,6 +88,17 @@ button {
   border: 1px solid #50d0ff;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+}
+
+form label {
+  width: 140px;
+}
+
 .form-input {
   margin: 10px;
   display: flex;
@@ -97,6 +113,12 @@ h1 {
   font-weight: 800;
   text-align: center;
   color: white;
+}
+
+h2 {
+  padding: 0 0 20px;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 h3 {
