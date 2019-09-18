@@ -1,8 +1,11 @@
-export const allTodos = ({ todos }) => {
+export const todosByUserId = ({ todos }, userId) => {
   let todoIds = Object.keys(todos);
-  let todosArray = todoIds.map( id => (
-    todos[id]
-  ));
+  let todosArray = [];
+  todoIds.forEach( todoId => {
+    if (todos[todoId].user_id === userId) {
+      todosArray.push(todos[todoId]);
+    }
+  });
   return todosArray;
 };
 

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { allTodos } from '../../reducers/selectors';
+import { todosByUserId } from '../../reducers/selectors';
 import {
   fetchTodos,
   createTodo,
@@ -9,7 +9,7 @@ import { clearTodoErrors } from '../../actions/todo_error_actions';
 import TodoList from './todo_list';
 
 const mapStateToProps = state => ({
-  todos: allTodos(state),
+  todos: todosByUserId(state, state.session.currentUser.id),
   todoErrors: state.todoErrors,
   currentUser: state.session.currentUser
 });
