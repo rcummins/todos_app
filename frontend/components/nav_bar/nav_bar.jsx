@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default ({ logout, currentUser }) => {
+export default ({ logout, currentUser, clearSessionErrors }) => {
   const display = currentUser ? (
     <div className="nav-bar">
       <h3 className="nav-message">Welcome, {currentUser.username}</h3>
@@ -11,8 +11,14 @@ export default ({ logout, currentUser }) => {
     </div>
   ) : (
     <div className="nav-bar">
-      <Link className="button-nav" to="/signup">Sign up</Link>
-      <Link className="button-nav" to="/login">Log in</Link>
+      <Link
+        className="button-nav"
+        to="/signup"
+        onClick={clearSessionErrors} >Sign up</Link>
+      <Link
+        className="button-nav"
+        to="/login"
+        onClick={clearSessionErrors} >Log in</Link>
     </div>
   );
 
