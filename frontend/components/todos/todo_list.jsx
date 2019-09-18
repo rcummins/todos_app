@@ -20,7 +20,7 @@ class TodoList extends React.Component {
       clearTodoErrors,
       currentUser} = this.props;
     return(
-      <div>
+      <div className="todo-list">
         <ul>
           {
             todos.map( (todo, index) => (

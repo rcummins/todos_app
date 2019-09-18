@@ -1,16 +1,23 @@
+a, button {
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
 body {
   font-family: 'Nunito', sans-serif;
   background-color: #ffe3d9;
 }
 
 button {
-  padding: 5px 10px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 700;
-  border: none;
   color: white;
-  cursor: pointer;
 }
 
 .button-add-step {
@@ -29,13 +36,18 @@ button {
   background-color: #ff7f50;
 }
 
-.button-undo {
-  background-color: gray;
+.button-nav {
+  margin: 0px 10px;
+  background-color: white;
+  color: #ff7f50;
 }
 
-#content {
-  width: 500px;
-  margin: 0 auto;
+.button-nav-logout {
+  padding: 8px 10px;
+}
+
+.button-undo {
+  background-color: gray;
 }
 
 .error-message {
@@ -80,22 +92,30 @@ button {
 }
 
 h1 {
-  padding: 20px 0px 0px;
+  padding: 0px 20px;
   font-size: 30px;
   font-weight: 800;
   text-align: center;
-  color: #ff7f50;
+  color: white;
 }
 
 h3 {
   font-size: 20px;
   font-weight: 700;
-  cursor: pointer;
 }
 
 h4 {
   font-size: 16px;
   font-weight: 700;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: #ff7f50;
+  color: white;
 }
 
 input, textarea {
@@ -115,6 +135,16 @@ input, textarea {
 
 label {
   width: 60px;
+}
+
+.nav-bar {
+  padding: 0px 10px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.nav-message {
+  padding: 0 10px 0 0;
 }
 
 .step-header {
@@ -150,4 +180,13 @@ textarea {
   background-color: white;
   border: 1px solid #ff7f50;
   border-radius: 8px;
+}
+
+.todo-list {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.toggle-detail {
+  cursor: pointer;
 }
