@@ -4,6 +4,7 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       login!(@user)
+      @user.create_demo_todo
       render :show
     else
       render json: @user.errors.full_messages, status: :unprocessable_entity

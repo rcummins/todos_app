@@ -32,6 +32,43 @@ class User < ApplicationRecord
     self.session_token
   end
 
+  def create_demo_todo
+    demo = Todo.create({
+      title: 'Click here to see todo details',
+      body: 'Use this todo to practice using the Todos App',
+      done: false,
+      user_id: self.id
+    })
+
+    Step.create({
+      title: 'Try adding another step to this todo',
+      body: 'Fill in anything you want for Title and Body in the purple box below, then click the Add Step button',
+      done: false,
+      todo_id: demo.id
+    })
+
+    Step.create({
+      title: 'Try marking this step as done',
+      body: 'Click the Done button at the top right of this orange box',
+      done: false,
+      todo_id: demo.id
+    })
+
+    Step.create({
+      title: 'Try deleting this step',
+      body: 'Click the Delete Step button at the bottom of this orange box',
+      done: false,
+      todo_id: demo.id
+    })
+
+    Step.create({
+      title: 'Delete this todo when you\'re done practicing',
+      body: 'Click the Delete Todo button at the bottom of the white box',
+      done: false,
+      todo_id: demo.id
+    })
+  end
+
   private
 
   def ensure_session_token
